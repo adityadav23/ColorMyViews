@@ -82,4 +82,30 @@
         app:layout_constraintTop_toBottomOf="@+id/box_three"
         tools:ignore="TextContrastCheck" />
 
+    <TextView
+        android:id="@+id/label_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#8457D5"
+        android:fontFamily="@font/roboto"
+        android:text="@string/how_to_play"
+        android:textSize="@dimen/box_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/info_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="#8558D6"
+        android:text="@string/tap_to_play"
+        android:textSize="@dimen/box_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_text"
+        app:layout_constraintTop_toBottomOf="@+id/box_two"
+        app:layout_constraintVertical_bias="0.48000002" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
