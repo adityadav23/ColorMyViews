@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 
@@ -14,20 +15,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Attaching listeners to all the views
-        val box_one = findViewById<TextView>(R.id.box_one)
-        val box_two = findViewById<TextView>(R.id.box_two)
-        val box_three = findViewById<TextView>(R.id.box_three)
-        val box_four = findViewById<TextView>(R.id.box_four)
-        val box_five = findViewById<TextView>(R.id.box_five)
+        val boxOne = findViewById<TextView>(R.id.box_one)
+        val boxTwo = findViewById<TextView>(R.id.box_two)
+        val boxThree = findViewById<TextView>(R.id.box_three)
+        val boxFour = findViewById<TextView>(R.id.box_four)
+        val boxFive = findViewById<TextView>(R.id.box_five)
         val constraint_layout = findViewById<ConstraintLayout>(R.id.constraint_layout)
+        val redButton = findViewById<Button>(R.id.red_button)
+        val blueButton = findViewById<Button>(R.id.blue_button)
+        val yellowButton = findViewById<Button>(R.id.yellow_button)
 
         val clickableViews : List<View> =
-            listOf(box_one, box_two, box_three,
-                box_four, box_five, constraint_layout)
+            listOf(boxOne, boxTwo, boxThree,
+                boxFour, boxFive, constraint_layout)
 
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it) }
         }
+
+        redButton.setOnClickListener { boxThree.setBackgroundResource(R.color.my_red) }
+        yellowButton.setOnClickListener { boxFour.setBackgroundResource(R.color.my_yellow) }
+        blueButton.setOnClickListener { boxFive.setBackgroundResource(R.color.my_blue) }
+
     }
 
 
@@ -41,7 +50,9 @@ class MainActivity : AppCompatActivity() {
      *     * Using a custom color defined in color.xml
      */
     private fun makeColored(view: View) {
+
         when (view.id) {
+
 
             // Boxes using Color class colors for background
             R.id.box_one -> view.setBackgroundColor(Color.DKGRAY)
